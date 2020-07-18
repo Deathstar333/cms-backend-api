@@ -17,4 +17,8 @@ public class UserService {
         Optional<User> opt = userRepository.findById(user.getEmail());
         return opt.isPresent() && opt.get().getPassword().equals(user.getPassword());
     }
+
+    public void addUser(User user) {
+        userRepository.save(user);
+    }
 }
